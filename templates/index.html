@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExtrAct</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            background-color: #003366;
+        }
+        a {
+            color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 36px;
+            background: linear-gradient(90deg, #003366, #FF6600); 
+            color: #f9f9f9;
+            border-radius: 10px;
+            margin: 0;
+            margin-top: 5px;
+            box-shadow: 0px 2px 6px black;
+            padding-top: 0px;
+            /* border: solid 3px #f9f9f9; */
+        }
+        h2 {
+            margin: 10px;
+            margin-bottom: 10px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            width: 100%;
+            min-height: 85vh;
+            padding-top: 0px;
+            padding-bottom: 30px;
+        }
+        .container-title {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            width: 100%;
+            padding: 0px;
+        }
+        .left-column, .center-column, .right-column{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+        .left-column{
+            padding-left:10px;
+        }
+        .right-column{
+            padding-right:10px;
+        }
+        .summary-section, .history-section, .upload-section {
+            background-color: #003366;
+            margin-top: 10px;            
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px black;
+            flex: 1;
+            color: #f9f9f9;
+            /* border: solid 3px #f9f9f9; */
+        }
+        textarea {
+            width: 90%;
+            height: 72%;
+            resize: none;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border: solid black;
+            font-family: inherit;
+            text-align: justify; 
+            font-size: medium;
+            padding: 10px; 
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            cursor: pointer;
+            border: solid black;
+            border-radius: 8px;
+            background-color: #FF6600;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #CC5500;
+        }
+        .loading {
+            color: #f9f9f9;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        .custom-file-button {
+            background-color: #FF6600;
+            color: #f9f9f9;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            border: solid black;
+        }
+        .custom-file-button:hover {
+            background-color: #CC5500;
+        }
+        .footer-note {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #f9f9f9;
+            font-style: italic;
+        }
+        #historyList a {
+            color: #f9f9f9;
+            text-decoration: none;
+            margin-top: 5px;
+            font-size: medium;
+            display: inline-block;
+            padding: 8px;
+        }
+        #historyList a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container-title">
+        <div class="left-column"></div>
+        <div class="center-column">
+            <h1>ExtrAct</h1>
+        </div>
+        <div class="right-column"></div>
+    </div>
+    
+    <div class="container">
+        <div class="left-column">
+            <div class="upload-section" style="text-align: center;">
+                <h2>Upload</h2>
+                    <label for="pdfFile" class="custom-file-button">Select PDF</label>
+                    <input type="file" id="pdfFile" accept="application/pdf" style="display:none;">
+                
+                <fieldset style="margin-top: 10px; border:none; font-family: Arial,sans-serif; font-size: large; text-align: center;">
+                    <legend>Select Output Format:</legend>
+
+                    <div style="text-align:left; display: inline-block;">
+                        <input type="radio" id="format_paragraphs" name="output_format" value="paragraphs" checked>
+                        <label for="format_paragraphs">Paragraphs</label>
+                        <br>
+                        <input type="radio" id="format_bulletpoints" name="output_format" value="bullet points">
+                        <label for="format_bulletpoints">Bullet Points</label>
+                        <br>
+                        <input type="radio" id="format_json" name="output_format" value="json">
+                        <label for="format_json">JSON</label>
+                    </div>
+                    <br>
+                    <button onclick="submitPDF()">ExtrAct</button>
+                </fieldset>
+                <div class="loading" id="loading" style="display:none;">...Processing...</div>
+                <div style="margin-top: 10px; font-family: Arial,sans-serif; font-size: medium; text-align: center;">
+                    <strong>System Protocols:</strong>
+                    <ul style="text-align: left; padding-right: 10px;">
+                        <li>Original files are processed temporarily and never stored on cloud or local premises.</li>
+                        <li>Text is shared with an external AI (OpenAI) for analysis.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-column">
+            <div class="summary-section" style="text-align: center; padding-bottom: 10px;">
+                <h2>Summary</h2>
+                <textarea id="summaryOutput" readonly></textarea>
+                <button onclick="downloadTXTsummary()">Download .txt</button>
+                <button onclick="downloadPDFsummary()">Download .pdf</button>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="history-section" style="text-align: center; ">
+                <h2>Session Activity</h2>
+                <div id="historyList"></div>
+            </div>
+        </div> 
+    </div>
+        
+    <div class="footer-note">
+        Powered by OpenAI
+    </div>
+
+    <script>
+        const session_id = "session_" + Math.random().toString(36).substr(2, 9);
+        summaryOutput.value = "The summary will be displayed here and will be available for download."
+        summaryOutput.style.color = "gray";
+        summaryOutput.style.textAlign = "center";
+        historyList.innerHTML="No recent activity beyond current summary.";
+        
+        async function submitPDF() {
+            const fileInput = document.getElementById('pdfFile');
+            const file = fileInput.files[0];
+            const summaryOutput = document.getElementById('summaryOutput');
+            const loading = document.getElementById('loading');
+            const selectedFormat = document.querySelector('input[name="output_format"]:checked').value;
+
+            if (!file) {
+                alert("Please select a PDF file.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('output_format', selectedFormat)
+            formData.append('session_id', session_id)
+
+            loading.style.display = "block";
+
+            try {
+                const response = await fetch('/summarize', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+
+                const text = await response.text();
+                summaryOutput.style.color = "black";
+                summaryOutput.style.textAlign = "justify";
+                summaryOutput.value = text;
+
+                try {
+                    const historyResponse = await fetch(`/filehistory?session_id=${session_id}`);
+                    const historyData = await historyResponse.json();
+                    const historyList = document.getElementById('historyList');
+
+                    if(historyData.files.length>0)
+                        historyList.innerHTML = "";
+
+                    historyData.files.forEach(fileName => {
+                        const link = document.createElement('a');
+                        link.textContent = fileName;
+                        link.href = `/download_old_file?session_id=${session_id}&filename=${encodeURIComponent(fileName)}`;
+                        historyList.appendChild(link);
+                    });
+                }
+                catch (historyError) {
+                    console.warn("Archive fetch failed: ", historyError);
+                }
+            } 
+            catch (error) {
+                summaryOutput.value = "Error: " + error;
+            } 
+            finally {
+                loading.style.display = "none";
+            }
+        }
+
+        historyList.addEventListener('contextmenu', function(e) {
+            if(e.target.tagName == 'A') {
+                e.preventDefault();
+
+                goneText = e.target.textContent;
+                goneHref = e.target.href;
+                
+                e.target.outerHTML = `
+                    <div class="confirm-actions" data-old-text="${goneText}" data-old-href="${goneHref}">
+                        <button class="btn-delete"> Delete </button>
+                        <button class="btn-cancel" style="background-color: #003366; color: white"> Cancel </button>
+                    </div>
+                `;
+            }
+        })
+
+        historyList.addEventListener('click', async function(e) {
+            if (e.target.matches('.btn-cancel')) {
+                const container = e.target.closest('.confirm-actions');
+            
+                const oldText = container.getAttribute('data-old-text');
+                const oldHref = container.getAttribute('data-old-href');
+            
+                container.outerHTML = `<a href="${oldHref}">${oldText}</a>`;
+            }
+            else if (e.target.matches('.btn-delete')) {
+                const container = e.target.closest('.confirm-actions');
+                const filename = container.getAttribute('data-old-text');
+
+                const response = await fetch(`/delete_file?session_id=${session_id}&filename=${encodeURIComponent(filename)}`, {
+                    method: 'DELETE'
+                })
+
+                if(response.ok) {
+                    container.remove();
+                    if (historyList.children.length === 0) {
+                        historyList.innerHTML = "No recent activity beyond current summary.";
+                    }   
+                } 
+                else {
+                    alert("Failed to delete file on server.");
+                }
+            }
+        })
+
+        async function downloadTXTsummary() {
+            try {
+                const response = await fetch (`/downloadtxt?session_id=${session_id}`, {method: 'GET'});
+                if(!response.ok) throw new Error(`Server returned ${response.status}`);
+
+                const dispositionHeader = response.headers.get("content-disposition");
+                let downloadName = "summary.txt"; 
+                if (dispositionHeader && dispositionHeader.includes("filename=")) {
+                    downloadName = dispositionHeader.split("filename=")[1].trim();
+                    downloadName = downloadName.replace(/(^"|"$)/g, "");
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download=downloadName;
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }
+            catch(error) {
+                alert("Error: " + error.message);
+            }
+        }
+
+        async function downloadPDFsummary() {
+            try {
+                const response = await fetch (`/downloadpdf?session_id=${session_id}`, {method: 'GET'});
+                if(!response.ok) throw new Error(`Server returned ${response.status}`);
+                
+                const dispositionHeader = response.headers.get("content-disposition");
+                let downloadName = "summary.pdf"; 
+
+                if (dispositionHeader && dispositionHeader.includes("filename=")) {
+                    downloadName = dispositionHeader.split("filename=")[1].trim();
+                    downloadName = downloadName.replace(/(^"|"$)/g, "");
+                }
+
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download=downloadName;
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }
+            catch(error) {
+                alert("Error: " + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

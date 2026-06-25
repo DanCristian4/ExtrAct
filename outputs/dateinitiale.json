@@ -1,0 +1,416 @@
+{
+  "summaries": [
+    {
+      "contract_title": "Contract for Supply of Digital Services",
+      "parties": [
+        {
+          "topic": "Party - Supplier",
+          "details": "AlphaTech Ltd., defined as Supplier",
+          "source_article": "Parties"
+        },
+        {
+          "topic": "Party - Client",
+          "details": "Beta Solutions Inc., defined as Client",
+          "source_article": "Parties"
+        }
+      ],
+      "effective_date": "2025-11-01",
+      "initial_duration_months": 12,
+      "obligations": [
+        {
+          "topic": "Obligations - Supplier services",
+          "details": "Provide digital services per Annex A",
+          "source_article": "Article 1"
+        },
+        {
+          "topic": "Obligations - Supplier additional services",
+          "details": "May provide extra services under separate agreements",
+          "source_article": "Article 1"
+        },
+        {
+          "topic": "Obligations - Client payment",
+          "details": "Pay 25,000 USD monthly for services",
+          "source_article": "Article 3"
+        },
+        {
+          "topic": "Obligations - Payment terms",
+          "details": "Invoices payable within 30 days",
+          "source_article": "Article 3"
+        },
+        {
+          "topic": "Obligations - Confidentiality mutual",
+          "details": "Both keep confidential information from third parties",
+          "source_article": "Article 4"
+        },
+        {
+          "topic": "Obligations - IP ownership",
+          "details": "All created intellectual property belongs to Client",
+          "source_article": "Article 5"
+        },
+        {
+          "topic": "Obligations - Supplier reporting",
+          "details": "Submit monthly progress reports",
+          "source_article": "Article 6"
+        },
+        {
+          "topic": "Obligations - Holidays",
+          "details": "Supplier observes national holidays",
+          "source_article": "Article 7"
+        },
+        {
+          "topic": "Obligations - Office supplies",
+          "details": "Client provides necessary office supplies",
+          "source_article": "Article 7"
+        },
+        {
+          "topic": "Obligations - Insurance",
+          "details": "Supplier maintains professional liability insurance",
+          "source_article": "Article 9"
+        }
+      ],
+      "termination": [
+        {
+          "topic": "Termination - Notice",
+          "details": "Either party may terminate with 30 days written notice",
+          "source_article": "Article 8"
+        },
+        {
+          "topic": "Termination - For cause",
+          "details": "Termination for material breach or insolvency",
+          "source_article": "Article 8"
+        },
+        {
+          "topic": "Termination - Early end reference",
+          "details": "Early termination referenced in duration clause",
+          "source_article": "Article 2"
+        }
+      ],
+      "liability": [
+        {
+          "topic": "Liability - Insurance",
+          "details": "Supplier must maintain professional liability insurance",
+          "source_article": "Article 9"
+        },
+        {
+          "topic": "Liability - Indirect damages",
+          "details": "No liability for indirect or consequential damages",
+          "source_article": "Article 9"
+        }
+      ],
+      "dispute_resolution": [],
+      "id": 1
+    },
+    {
+      "contract_title": "Master Software Development and Services Agreement",
+      "parties": [
+        {
+          "topic": "Provider",
+          "details": "Omega Solutions International, Ltd., Delaware corporation",
+          "source_article": "Preamble"
+        },
+        {
+          "topic": "Client",
+          "details": "Apex Global Logistics, Inc., New York corporation",
+          "source_article": "Preamble"
+        }
+      ],
+      "effective_date": "2026-01-26",
+      "initial_duration_months": 36,
+      "obligations": [
+        {
+          "topic": "Services scope",
+          "details": "Provider develops, deploys, maintains logistics management System",
+          "source_article": "Article 2, Recitals"
+        },
+        {
+          "topic": "SOW basis",
+          "details": "Services defined in executed Statements of Work",
+          "source_article": "2.1"
+        },
+        {
+          "topic": "Change management",
+          "details": "Client requests changes; signed Change Orders required",
+          "source_article": "2.2"
+        },
+        {
+          "topic": "Performance standard",
+          "details": "Provider performs services workmanlike, industry standard, qualified staff",
+          "source_article": "2.3"
+        },
+        {
+          "topic": "Subcontractors",
+          "details": "Provider needs Client consent; remains fully liable",
+          "source_article": "2.4"
+        },
+        {
+          "topic": "Fees",
+          "details": "Client pays fees as specified in each SOW",
+          "source_article": "3.1"
+        },
+        {
+          "topic": "Invoicing and payment",
+          "details": "Monthly invoices; payment due Net 30",
+          "source_article": "3.2"
+        },
+        {
+          "topic": "Late payment interest",
+          "details": "Unpaid amounts accrue up to 1.5 percent monthly",
+          "source_article": "3.3"
+        },
+        {
+          "topic": "Taxes",
+          "details": "Client pays applicable taxes, excluding Provider income taxes",
+          "source_article": "3.4"
+        },
+        {
+          "topic": "Expenses",
+          "details": "Client reimburses pre-approved reasonable out-of-pocket expenses",
+          "source_article": "3.5"
+        },
+        {
+          "topic": "Deliverables ownership",
+          "details": "Client owns Deliverables after full fee payment",
+          "source_article": "5.1"
+        },
+        {
+          "topic": "Provider background IP license",
+          "details": "Client gets perpetual non-exclusive royalty-free license within Deliverables",
+          "source_article": "5.2"
+        },
+        {
+          "topic": "Third-party software",
+          "details": "Provider discloses open-source; ensures license compliance",
+          "source_article": "5.3"
+        },
+        {
+          "topic": "Confidentiality",
+          "details": "Each party keeps other’s Confidential Information secret",
+          "source_article": "6.1"
+        },
+        {
+          "topic": "Data security",
+          "details": "Provider maintains reasonable safeguards for Client Data",
+          "source_article": "6.3"
+        },
+        {
+          "topic": "Data protection addendum",
+          "details": "Separate DPA for EU and California personal data",
+          "source_article": "6.4"
+        }
+      ],
+      "termination": [
+        {
+          "topic": "Initial term",
+          "details": "Agreement lasts 36 months from Effective Date",
+          "source_article": "4.1"
+        },
+        {
+          "topic": "Auto-renewal",
+          "details": "Automatically renews yearly unless 60 days’ non-renewal notice",
+          "source_article": "4.2"
+        },
+        {
+          "topic": "Termination for cause",
+          "details": "Immediate termination for uncured breach or insolvency",
+          "source_article": "4.3"
+        },
+        {
+          "topic": "Termination for convenience",
+          "details": "Client may terminate with 90 days’ notice",
+          "source_article": "4.4"
+        },
+        {
+          "topic": "Payments on termination",
+          "details": "Client pays for services rendered and unavoidable costs",
+          "source_article": "4.4"
+        },
+        {
+          "topic": "Post-termination obligations",
+          "details": "Provider returns Client Data and Confidential Information",
+          "source_article": "4.5"
+        }
+      ],
+      "liability": [
+        {
+          "topic": "Provider indemnity",
+          "details": "Provider indemnifies Client for IP infringement claims",
+          "source_article": "7.1"
+        },
+        {
+          "topic": "Client indemnity",
+          "details": "Client indemnifies Provider for unlawful System use",
+          "source_article": "7.2"
+        },
+        {
+          "topic": "Exclusion of damages",
+          "details": "No indirect, incidental, special, consequential damages",
+          "source_article": "7.3"
+        },
+        {
+          "topic": "Liability cap",
+          "details": "Liability limited to fees paid past 12 months",
+          "source_article": "7.3"
+        }
+      ],
+      "dispute_resolution": [
+        {
+          "topic": "Governing law",
+          "details": "New York law governs, excluding conflict rules",
+          "source_article": "8.1"
+        },
+        {
+          "topic": "Arbitration",
+          "details": "Binding AAA arbitration in New York, NY",
+          "source_article": "8.2"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "contract_title": "Framework Supply and Distribution Agreement",
+      "parties": [
+        {
+          "topic": "Supplier",
+          "details": "NOVATECH INDUSTRIES B.V., Dutch private limited company",
+          "source_article": "Preamble"
+        },
+        {
+          "topic": "Distributor",
+          "details": "TRANSCARPATHIA LOGISTICS S.R.L., Romanian limited company",
+          "source_article": "Preamble"
+        }
+      ],
+      "effective_date": "2026-02-01",
+      "initial_duration_months": 36,
+      "obligations": [
+        {
+          "topic": "Supplier - supply products",
+          "details": "Supply automation products to Distributor for Romanian resale",
+          "source_article": "Preamble"
+        },
+        {
+          "topic": "Distributor - purchase orders",
+          "details": "Submit binding POs; Supplier must confirm in writing",
+          "source_article": "Article 3.1"
+        },
+        {
+          "topic": "Delivery terms",
+          "details": "Deliver FCA Eindhoven; risk passes on carrier delivery",
+          "source_article": "Article 3.2"
+        },
+        {
+          "topic": "Title transfer",
+          "details": "Title passes to Distributor only after full payment",
+          "source_article": "Article 3.3"
+        },
+        {
+          "topic": "Pricing",
+          "details": "Prices per current Euro price list, excluding taxes, transport",
+          "source_article": "Article 4.1"
+        },
+        {
+          "topic": "Payment terms",
+          "details": "Pay undisputed invoices within 45 days from invoice date",
+          "source_article": "Article 4.2"
+        },
+        {
+          "topic": "Late payment interest",
+          "details": "Interest ECB reference rate plus 8 percentage points",
+          "source_article": "Article 4.3"
+        },
+        {
+          "topic": "Minimum annual purchase",
+          "details": "Buy at least EUR 1,500,000 products per calendar year",
+          "source_article": "Article 4.4"
+        },
+        {
+          "topic": "Warranty period",
+          "details": "Products defect-free for 24 months from delivery",
+          "source_article": "Article 5.1"
+        },
+        {
+          "topic": "Regulatory compliance",
+          "details": "Products CE marked and comply with applicable EU directives",
+          "source_article": "Article 5.2"
+        },
+        {
+          "topic": "Post-termination duties",
+          "details": "Pay all invoices; cease marketing and sales",
+          "source_article": "Article 7.3"
+        }
+      ],
+      "termination": [
+        {
+          "topic": "Initial term and renewal",
+          "details": "3-year initial term; automatic 12-month renewals",
+          "source_article": "Article 2.1-2.2"
+        },
+        {
+          "topic": "Non-renewal notice",
+          "details": "Either Party: 6 months’ prior written non-renewal notice",
+          "source_article": "Article 2.2"
+        },
+        {
+          "topic": "Termination for convenience",
+          "details": "Either Party: terminate anytime with 6 months’ notice",
+          "source_article": "Article 7.1"
+        },
+        {
+          "topic": "Termination for material breach",
+          "details": "Terminate if breach not cured within 30 days after notice",
+          "source_article": "Article 7.2(a)"
+        },
+        {
+          "topic": "Termination for non-payment",
+          "details": "Terminate if unpaid 14 days after due date",
+          "source_article": "Article 7.2(b)"
+        },
+        {
+          "topic": "Termination for insolvency",
+          "details": "Terminate if other Party insolvent or in insolvency proceedings",
+          "source_article": "Article 7.2(c)"
+        },
+        {
+          "topic": "Effect of termination - payments",
+          "details": "All outstanding invoices immediately due and payable",
+          "source_article": "Article 7.3"
+        },
+        {
+          "topic": "Effect of termination - sales",
+          "details": "Distributor must stop all marketing and sales of Products",
+          "source_article": "Article 7.3"
+        }
+      ],
+      "liability": [
+        {
+          "topic": "Liability cap",
+          "details": "Supplier liability capped at 100 percent of last 12 months",
+          "source_article": "Article 6.1"
+        },
+        {
+          "topic": "Exclusion of indirect damages",
+          "details": "No liability for indirect, special, consequential damages",
+          "source_article": "Article 6.2"
+        },
+        {
+          "topic": "Liability exceptions",
+          "details": "No cap for fraud, willful misconduct, death, confidentiality",
+          "source_article": "Article 6.3"
+        }
+      ],
+      "dispute_resolution": [
+        {
+          "topic": "Governing law",
+          "details": "Dutch law; CISG expressly excluded",
+          "source_article": "Article 8.1"
+        },
+        {
+          "topic": "Arbitration forum",
+          "details": "NAI arbitration, one arbitrator, Amsterdam, English language",
+          "source_article": "Article 8.2"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
